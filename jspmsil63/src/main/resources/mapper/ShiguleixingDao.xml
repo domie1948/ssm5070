@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.ShiguleixingDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.ShiguleixingEntity" id="shiguleixingMap">
+        <result property="shiguleixing" column="shiguleixing"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.ShiguleixingVO" >
+		SELECT * FROM shiguleixing  shiguleixing         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.ShiguleixingVO" >
+		SELECT  shiguleixing.* FROM shiguleixing  shiguleixing 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.ShiguleixingView" >
+
+		SELECT  shiguleixing.* FROM shiguleixing  shiguleixing 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.ShiguleixingView" >
+		SELECT * FROM shiguleixing  shiguleixing <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+</mapper>
